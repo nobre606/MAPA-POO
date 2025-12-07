@@ -3,9 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Avaliacao;
-import model.Curso;
-
 /**
  * Fase 1 + 3 + 5 + 6
  */

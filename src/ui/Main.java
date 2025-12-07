@@ -5,14 +5,13 @@ import repository.*;
 import service.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Instanciar repos e serviços (camada repository + service - Fase 7)
+        // Instanciar repositório e serviços (camada repository + service - Fase 7)
         var alunoRepo = new AlunoRepository();
         var profRepo = new ProfessorRepository();
         var cursoRepo = new CursoRepository();
@@ -23,16 +22,16 @@ public class Main {
         var cursoService = new CursoService(cursoRepo);
         var turmaService = new TurmaService(turmaRepo);
 
-        // Inserir alguns dados de exemplo (para testes)
+        // Dados Pré-definidos (para testes)
         Curso c1 = new CursoPresencial("Sistemas de Informação", "SI101", 360, "Sala 12");
-        Curso c2 = new CursoEAD("Logística", "LG202", 200, "Plataforma X");
+        Curso c2 = new CursoEAD("Logística", "LG202", 200, "Unicesumar EAD");
         cursoService.cadastrar(c1);
         cursoService.cadastrar(c2);
 
         Professor p1 = new Professor("Dra. Maria", "Banco de Dados", "PROF100", "maria", "123");
         profService.cadastrar(p1);
 
-        Aluno a1 = new Aluno("João Silva", "2025001", c1, "joao", "abc");
+        Aluno a1 = new Aluno("Alberto Araujo", "2025001", c1, "joao", "abcdef");
         alunoService.cadastrar(a1);
 
         Turma t1 = new Turma("TURMA01", p1, c1);
